@@ -12,6 +12,21 @@ function my(x){
     return x.reverse();
 }
 console.log(my(lst))
+// 2 reverse
+var lst = [ "name", "data", 9, "form",10]
+
+function myFunc(x){
+    var len = x.length;
+    newLst = []
+    while(len>0){
+        len--
+        newLst.push(x[len]);
+        
+    }
+    
+    return `newLst: ${newLst}`
+}
+console.log(myFunc(lst))
 
 
 // Count characters: 
@@ -33,16 +48,20 @@ console.log(myFonc(input))
 
 //Find Maximum and Minimum:
 var numbers = [ 2, 3, 30, 1,7, 44, 5, 7, 13, 17, 25]
-var numbersSS = [ 2, 3, 30,7, 88, 5, 7, 13, 17, 25]
 
 function myFun(x){
-    var minValue = Math.min(...x);
-    var maxValue = Math.max(...x);
-    return `Minimum value is ${minValue} and maximum value is ${maxValue}`
+    var miny = x[0]
+    var maxy = x[0]
+    for(i of numbers){
+        if(miny>i){
+            miny=i
+        }if (maxy<i){
+            maxy=i
+        }
+    }
+    return `miny:${miny} , maxy:${maxy} `
 }
-
 console.log(myFun(numbers))
-console.log(myFun(numbersSS))
 
 
 // Sum of Array:
@@ -60,12 +79,15 @@ console.log(myFun(numbers))
 
 // Mathematical Functions:
 // Factorial: 
-function myFun(x , y){
-    var factorial = x*y
-    return factorial
-
+function myFunc(x) {
+    var y = 1;
+    while(x>1){
+        y *=x
+        x--       
+    }
+    return y
 }
-console.log(myFun(8,10))
+console.log(myFunc(5));
 
 
 //Fibonacci Sequence:
